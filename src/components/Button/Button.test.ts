@@ -1,4 +1,4 @@
-import { StorybookTest } from "@engi.network/design-matcher/plugin/types";
+import { StorybookTest } from "@engi.network/design-matcher/src/types";
 
 describe("Button designs", () => {
   test("big, primary, disabled", async () => {
