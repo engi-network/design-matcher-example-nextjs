@@ -1,0 +1,25 @@
+version: "3.9"
+x-test-framework: jest
+
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    user: pptruser:pptruser
+    command: /bin/sh -c "node_modules/.bin/jest --config=jest.config.js --json --outputFile=$ENGI_WORKING_DIR/jest.json"
+    volumes:
+      - type: volume
+        source: output
+        target: $ENGI_WORKING_DIR
+    environment:
+      - STORYBOOK_PORT=${STORYBOOK_PORT}
+      - ENGI_WORKING_DIR=${ENGI_WORKING_DIR}
+      - ENGI_WORKING_VOL=${ENGI_WORKING_VOL}
+    # https://stackoverflow.com/questions/62345581/node-js-puppeteer-on-docker-no-usable-sandbox
+    security_opt:
+      - seccomp=chrome.json
+volumes:
+  output:
+    external: true
+    name: $ENGI_WORKING_VOL
