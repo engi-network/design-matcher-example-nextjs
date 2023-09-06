@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "storybook": "storybook dev -p 6006",
+    "test": "STORYBOOK_PORT=6008 jest",
+    "storybook": "storybook dev -p 6008",
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@engi.network/design-matcher": "1.1.13",
+    "@engi.network/design-matcher": "1.1.17",
     "@types/jest": "^29.5.3",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
