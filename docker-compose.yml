@@ -11,6 +11,8 @@ x-service:
     - type: volume
       source: output
       target: $ENGI_WORKING_DIR
+  cap_add:
+    - SYS_ADMIN
 
 services:
   storybook:

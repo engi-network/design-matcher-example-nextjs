@@ -12,7 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@engi.network/design-matcher": "1.1.17",
+    "@engi.network/design-matcher": "1.1.18",
     "@types/jest": "^29.5.3",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
@@ -41,10 +41,5 @@
     "@storybook/testing-library": "^0.2.0",
     "eslint-plugin-storybook": "^0.6.13",
     "storybook": "^7.3.0"
-  },
-  "overrides": {
-    "@engi.network/design-matcher": {
-      "jest": "*"
-    }
   }
 }
